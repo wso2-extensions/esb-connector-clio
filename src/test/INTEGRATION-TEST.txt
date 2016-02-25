@@ -56,18 +56,18 @@ Steps to follow in setting integration test.
     i)   apiUrl 							- 	The API URL specific to the created Clio account (https://app.goclio.com).
     ii) 	accessToken			-   Use the access token obtained under step 5 iii).
     iii)	lastName						-	Use a valid string as the last name of the contact.
-    iv)		firstName						-	Use a valid string as the first name of the contact.
-    v)		contactType						- 	Use a valid contact type (e.g:- Person).
-    vi)		title							- 	Use a valid title for the person contact.
-    vii)	prefix							-   Use a valid prefix for the person contact (e.g:-Mr).
-    viii)   status							-	Use a valid status for a matter (e.g:-Open).
-    ix)     descriptionMandatory			-	Use a valid string as the description.
-    x)	    descriptionOptional				-	Use a valid string as the description.
-    xi)	    billable						-	Use either 'true' or 'false'.
-    xii)	closeDate						-	Use a valid future date in the format of 'yyyy-mm-dd' (e.g:-2015-01-23).
-    xiii)	openDate						-	Use a valid future date in the format of 'yyyy-mm-dd' (e.g:-2015-01-23).
-    xiv)	billId							-	Use a valid bill Id. (Create a Bill in the Web Application by navigating to https://app.goclio.com/bills, create a Bill and get its ID from the URL).
-    xv)	    limit							- 	Use a valid integer as the maximum number of records to be returned.
+    iv)		firstName					-	Use a valid string as the first name of the contact.
+    v)		 contactType			- 	Use a valid contact type (e.g:- Person).
+    vi)		title							  -	Use a valid title for the person contact.
+    vii)	prefix							 -   Use a valid prefix for the person contact (e.g:-Mr).
+    viii)status					   -	Use a valid status for a matter (e.g:-Open).
+    ix)  descriptionMandatory			-	Use a valid string as the description.
+    x)	  descriptionOptional				-	Use a valid string as the description.
+    xi)	 billable						-	Use either 'true' or 'false'.
+    xii)	closeDate					-	Use a valid future date in the format of 'yyyy-mm-dd' (e.g:-2015-01-23).
+    xiii)	openDate					-	Use a valid future date in the format of 'yyyy-mm-dd' (e.g:-2015-01-23).
+    xiv)	billId							 -	Use a valid bill Id. (Create a Bill in the Web Application by navigating to https://app.goclio.com/bills, create a Bill and get its ID from the URL).
+    xv)	    limit						- 	Use a valid integer as the maximum number of records to be returned.
     xvi)	userId							-	Use a valid user Id. (Navigate to https://app.goclio.com/users, click on the user and get the ID from the URL).
     xvii)	taskNameMandatory				-	Use a valid string as the task name.
     xviii)	taskPriorityMandatory			-	Use a valid priority value ("High", "Normal" or "Low").
