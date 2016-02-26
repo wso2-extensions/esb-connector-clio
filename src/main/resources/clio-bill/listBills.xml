@@ -37,7 +37,6 @@
         <property name="uri.var.limit" expression="$func:limit"/>
         <property name="uri.var.createdSince" expression="$func:createdSince"/>
         <property name="uri.var.updatedSince" expression="$func:updatedSince"/>
-
         <script language="js">
             <![CDATA[
             var clientId = mc.getProperty('uri.var.clientId');
@@ -47,52 +46,41 @@
             var state = mc.getProperty('uri.var.state');
             var status = mc.getProperty('uri.var.status');
             var updatedSince = mc.getProperty('uri.var.updatedSince');
-            
             var urlQuery = '';
             
             if (clientId != null && clientId != ""){
                urlQuery += 'client_id=' + clientId + '&';
             }
-            
             if (createdSince != null && createdSince != ""){
                urlQuery += 'created_since=' + encodeURIComponent(createdSince) + '&';
             }
-            
             if (limit != null && limit != ""){
                urlQuery += 'limit=' + limit + '&';
             }
-            
             if (offset != null && offset != ""){
                urlQuery += 'offset=' + encodeURIComponent(offset) + '&';
             }
-            
             if (state != null && state != ""){
                urlQuery += 'state=' + state + '&';
             }
-            
             if (status != null && status != ""){
                urlQuery += 'status=' + status + '&';
             }
-            
             if (updatedSince != null && updatedSince != ""){
                urlQuery += 'updated_since=' + encodeURIComponent(updatedSince) + '&';
             }
-            
             // Add a leading '?' and remove the trailing '&'
             if (urlQuery != "") {
                urlQuery = '?' + urlQuery.substring(0, urlQuery.length - 1);
                mc.setProperty('uri.var.urlQuery', urlQuery);
             }
-            
          ]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="get" uri-template="{uri.var.apiUrl}/bills{uri.var.urlQuery}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -102,6 +90,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>

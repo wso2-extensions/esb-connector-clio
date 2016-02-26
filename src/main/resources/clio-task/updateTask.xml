@@ -87,83 +87,65 @@
             if (activities != null && activities != ""){
                task["activities"] = eval("(" + activities + ")");
             }
-            
             if (assignee != null && assignee != ""){
                task["assignee"] = eval("(" + assignee + ")");
             }
-            
             if (cascadingOffset != null && cascadingOffset != ""){
                task["cascading_offset"] = cascadingOffset;
             }
-            
             if (cascadingOffsetType != null && cascadingOffsetType != ""){
                task["cascading_offset_type"] = cascadingOffsetType;
             }
-            
             if (cascadingSource != null && cascadingSource != ""){
                task["cascading_source"] = eval("(" + cascadingSource + ")");
             }
-            
             if (complete != null && complete != ""){
                task["complete"] = complete;
             }
-            
             if (completedAt != null && completedAt != ""){
                task["completed_at"] = completedAt;
-            }            
-            
+            }
             if (description != null && description != ""){
                task["description"] = description;
             }
-            
             if (dueAt != null && dueAt != ""){
                task["due_at"] = dueAt;
             }
-            
             if (isPrivate != null && isPrivate != ""){
                task["is_private"] = isPrivate;
             }
-            
             if (isStatuteOfLimitations != null && isStatuteOfLimitations != ""){
                task["is_statute_of_limitations"] = isStatuteOfLimitations;
             }
-            
             if (matter != null && matter != ""){
                task["matter"] = eval("(" + matter + ")");
             }
-            
             if (name != null && name != ""){
                task["name"] = name;
             }
-            
             if (priority != null && priority != ""){
                task["priority"] = priority;
             }
-            
             if (reminders != null && reminders != ""){
                task["reminders"] = eval("(" + reminders + ")");
             }
-            
             jsonPayload["task"] = task;
             
             mc.setPayloadJSON(jsonPayload);
          ]]>
         </script>
-
         <filter source="boolean(get-property('uri.var.optionalFields'))" regex="true">
             <then>
                 <property name="uri.var.urlQuery"
                           expression="fn:concat('?optional_fields=', get-property('uri.var.optionalFields'))"/>
             </then>
         </filter>
-
         <call>
             <endpoint>
                 <http method="put"
                       uri-template="{uri.var.apiUrl}/tasks/{uri.var.taskId}{uri.var.urlQuery}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -173,6 +155,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>

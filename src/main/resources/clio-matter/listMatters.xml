@@ -57,35 +57,27 @@
             if (clientId != null && clientId != ""){
                urlQuery += 'client_id=' + clientId + '&';
             }
-            
             if (createdSince != null && createdSince != ""){
                urlQuery += 'created_since=' + encodeURIComponent(createdSince) + '&';
             }
-            
             if (displayNumber != null && displayNumber != ""){
                urlQuery += 'display_number=' + encodeURIComponent(displayNumber) + '&';
             }
-            
             if (limit != null && limit != ""){
                urlQuery += 'limit=' + limit + '&';
             }
-            
             if (offset != null && offset != ""){
                urlQuery += 'offset=' + encodeURIComponent(offset) + '&';
             }
-            
             if (practiceAreaId != null && practiceAreaId != ""){
                urlQuery += 'practice_area_id=' + practiceAreaId + '&';
             }
-            
             if (status != null && status != ""){
                urlQuery += 'status=' + status + '&';
             }
-            
             if (updatedSince != null && updatedSince != ""){
                urlQuery += 'updated_since=' + encodeURIComponent(updatedSince) + '&';
             }
-            
             // Add a leading '?' and remove the trailing '&'
             if (urlQuery != "") {
                urlQuery = '?' + urlQuery.substring(0, urlQuery.length - 1);
@@ -94,13 +86,11 @@
             
          ]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="get" uri-template="{uri.var.apiUrl}/matters{uri.var.urlQuery}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -110,6 +100,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>
