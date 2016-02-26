@@ -86,78 +86,60 @@
             if (assigneeId != null && assigneeId != ""){
                urlQuery += 'assignee_id=' + assigneeId + '&';
             }
-            
             if (assigneeType != null && assigneeType != ""){
                urlQuery += 'assignee_type=' + assigneeType + '&';
             }
-            
             if (assignerId != null && assignerId != ""){
                urlQuery += 'assigner_id=' + assignerId + '&';
             }
-            
             if (completed != null && completed != ""){
                urlQuery += 'completed=' + completed + '&';
             }
-            
             if (createdSince != null && createdSince != ""){
                urlQuery += 'created_since=' + encodeURIComponent(createdSince) + '&';
             }
-            
             if (dateRange != null && dateRange != ""){
                urlQuery += 'date_range=' + dateRange + '&';
             }
-            
             if (isStatuteOfLimitations != null && isStatuteOfLimitations != ""){
                urlQuery += 'is_statute_of_limitations=' + isStatuteOfLimitations + '&';
             }
-            
             if (limit != null && limit != ""){
                urlQuery += 'limit=' + limit + '&';
             }
-            
             if (matterId != null && matterId != ""){
                urlQuery += 'matter_id=' + matterId + '&';
             }
-            
             if (offset != null && offset != ""){
                urlQuery += 'offset=' + encodeURIComponent(offset) + '&';
             }
-            
             if (optionalFields != null && optionalFields != ""){
                urlQuery += 'optional_fields=' + optionalFields + '&';
             }
-            
             if (priority != null && priority != ""){
                urlQuery += 'priority=' + priority + '&';
             }
-            
             if (query != null && query != ""){
                urlQuery += 'query=' + query + '&';
             }
-            
             if (taskPermission != null && taskPermission != ""){
                urlQuery += 'task_permission=' + taskPermission + '&';
             }
-            
             if (updatedSince != null && updatedSince != ""){
                urlQuery += 'updated_since=' + encodeURIComponent(updatedSince) + '&';
             }
-            
             // Add a leading '?' and remove the trailing '&'
             if (urlQuery != "") {
                urlQuery = '?' + urlQuery.substring(0, urlQuery.length - 1);
                mc.setProperty('uri.var.urlQuery', urlQuery);
             }
-            
          ]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="get" uri-template="{uri.var.apiUrl}/tasks{uri.var.urlQuery}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -167,6 +149,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>

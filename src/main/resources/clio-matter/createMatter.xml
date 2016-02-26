@@ -114,87 +114,67 @@
             if (activityRates != null && activityRates != ""){
                matter["activity_rates"] = eval("(" + activityRates + ")");
             }
-            
             if (assignedLists != null && assignedLists != ""){
                matter["assigned_lists"] = eval("(" + assignedLists + ")");
             }
-            
             if (billable != null && billable != ""){
                matter["billable"] = billable;
             }
-            
             if (billingMethod != null && billingMethod != ""){
                matter["billing_method"] = billingMethod;
             }
-            
             if (clientReference != null && clientReference != ""){
                matter["client_reference"] = clientReference;
             }
-            
             if (closeDate != null && closeDate != ""){
                matter["close_date"] = closeDate;
             }
-            
             if (customFieldValues != null && customFieldValues != ""){
                matter["custom_field_values"] = eval("(" + customFieldValues + ")");
             }
-            
             if (displayNumber != null && displayNumber != ""){
                matter["display_number"] = displayNumber;
             }
-            
             if (flatRateActivityDescription != null && flatRateActivityDescription != ""){
                matter["flat_rate_activity_description"] = flatRateActivityDescription;
             }
-            
             if (flatRateActivityUser != null && flatRateActivityUser != ""){
                matter["flat_rate_activity_user"] = flatRateActivityUser;
             }
-            
             if (flatRateRate != null && flatRateRate != ""){
                matter["flat_rate_rate"] = flatRateRate;
             }
-            
             if (location != null && location != ""){
                matter["location"] = location;
             }
-            
             if (openDate != null && openDate != ""){
                matter["open_date"] = openDate;
             }
-            
             if (originatingAttorney != null && originatingAttorney != ""){
                matter["originating_attorney"] = originatingAttorney;
             }
-            
             if (pendingDate != null && pendingDate != ""){
                matter["pending_date"] = pendingDate;
             }
-            
             if (permission != null && permission != ""){
                matter["permission"] = permission;
             }
-            
             if (practiceArea != null && practiceArea != ""){
                matter["practice_area"] = practiceArea;
             }
-            
             if (responsibleAttorney != null && responsibleAttorney != ""){
                matter["responsible_attorney"] = responsibleAttorney;
             }
-            
             jsonPayload["matter"] = matter;
             
             mc.setPayloadJSON(jsonPayload);
          ]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="post" uri-template="{uri.var.apiUrl}/matters"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -204,6 +184,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>

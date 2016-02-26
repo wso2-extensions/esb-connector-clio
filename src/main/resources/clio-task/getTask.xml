@@ -23,23 +23,19 @@
     <sequence>
         <property name="uri.var.taskId" expression="$func:taskId"/>
         <property name="uri.var.optionalFields" expression="$func:optionalFields"/>
-
         <property name="uri.var.urlQuery" value=""/>
-
         <filter source="boolean(get-property('uri.var.optionalFields'))" regex="true">
             <then>
                 <property name="uri.var.urlQuery"
                           expression="fn:concat('?optional_fields=', get-property('uri.var.optionalFields'))"/>
             </then>
         </filter>
-
         <call>
             <endpoint>
                 <http method="get"
                       uri-template="{uri.var.apiUrl}/tasks/{uri.var.taskId}{uri.var.urlQuery}"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -49,6 +45,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>

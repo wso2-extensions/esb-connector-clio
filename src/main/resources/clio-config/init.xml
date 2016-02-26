@@ -23,7 +23,6 @@
     <sequence>
         <property name="uri.var.apiUrl" expression="$func:apiUrl"/>
         <property name="uri.var.accessToken" expression="$func:accessToken"/>
-
         <filter source="boolean(get-property('uri.var.apiUrl'))" regex="true">
             <then>
                 <property name="uri.var.apiUrl"
@@ -33,7 +32,6 @@
                 <property name="uri.var.apiUrl" value="https://app.goclio.com/api/v2"/>
             </else>
         </filter>
-
         <filter source="boolean(get-property('uri.var.accessToken'))" regex="true">
             <then>
                 <header name="Authorization"
@@ -41,6 +39,5 @@
                         scope="transport"/>
             </then>
         </filter>
-
     </sequence>
 </template>

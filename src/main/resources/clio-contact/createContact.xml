@@ -86,71 +86,54 @@
             if (activityRates != null && activityRates != ""){
                contact["activity_rates"] = eval("(" + activityRates + ")");
             }
-            
             if (addresses != null && addresses != ""){
                contact["addresses"] = eval("(" + addresses + ")");
             }
-            
             if (clioConnectEmail != null && clioConnectEmail != ""){
                contact["clio_connect_email"] = clioConnectEmail;
             }
-            
             if (company != null && company != ""){
                contact["company"] = company;
             }
-            
             if (customFieldValues != null && customFieldValues != ""){
                contact["custom_field_values"] = eval("(" + customFieldValues + ")");
             }
-            
             if (emailAddresses != null && emailAddresses != ""){
                contact["email_addresses"] = eval("(" + emailAddresses + ")");
             }
-            
             if (firstName != null && firstName != ""){
                contact["first_name"] = firstName;
             }
-            
             if (instantMessengers != null && instantMessengers != ""){
                contact["instant_messengers"] = eval("(" + instantMessengers + ")");
             }
-            
             if (lastName != null && lastName != ""){
                contact["last_name"] = lastName;
             }
-            
             if (companyName != null && companyName != ""){
                contact["name"] = companyName;
             }
-            
             if (phoneNumbers != null && phoneNumbers != ""){
                contact["phone_numbers"] = eval("(" + phoneNumbers + ")");
             }
-            
             if (prefix != null && prefix != ""){
                contact["prefix"] = prefix;
             }
-            
             if (title != null && title != ""){
                contact["title"] = title;
             }
-            
             if (webSites != null && webSites != ""){
                contact["web_sites"] = eval("(" + webSites + ")");
             }
-            
             jsonPayload["contact"] = contact;
-            
             mc.setPayloadJSON(jsonPayload);
          ]]>
         </script>
-
         <call>
             <endpoint>
                 <http method="post" uri-template="{uri.var.apiUrl}/contacts"/>
             </endpoint>
         </call>
-
         <!-- Remove custom Headers from the API Response -->
         <header name="Vary" action="remove" scope="transport"/>
         <header name="X-Frame-Options" action="remove" scope="transport"/>
@@ -160,6 +143,5 @@
         <header name="Strict-Transport-Security" action="remove" scope="transport"/>
         <header name="ETag" action="remove" scope="transport"/>
         <header name="Status" action="remove" scope="transport"/>
-
     </sequence>
 </template>
