@@ -142,7 +142,8 @@
     <scm>
         <connection>scm:git:https://github.com/wso2-extensions/esb-connector-clio.git</connection>
         <url>https://github.com/wso2-extensions/esb-connector-clio.git</url>
-        <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-clio
+        <developerConnection>
+            scm:git:https://github.com/wso2-extensions/esb-connector-clio
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
