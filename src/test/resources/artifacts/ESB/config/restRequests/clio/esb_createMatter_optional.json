@@ -6,10 +6,5 @@
   "description": "%s(descriptionOptional)",
   "closeDate": "%s(closeDate)",
   "openDate": "%s(openDate)",
-  "billable":
-  %
-  s
-  (
-  billable
-  )
+  "billable":"%s(billable)"
 }

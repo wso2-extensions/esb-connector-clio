@@ -29,7 +29,8 @@
     <properties>
         <connector.name>clio</connector.name>
         <test.framework.version>4.2.0</test.framework.version>
-        <esb.version>4.9.0</esb.version>
+        <!--<esb.version>4.9.0</esb.version>-->
+        <esb.version>5.0.0-BETA</esb.version>
         <carbon.kernel.version>4.4.1</carbon.kernel.version>
         <emma.version>2.1.5320</emma.version>
         <synapse.version>2.1.3-wso2v11</synapse.version>
@@ -135,15 +136,14 @@
         <dependency>
             <groupId>org.wso2.esb.integration</groupId>
             <artifactId>integration-base</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
     <scm>
         <connection>scm:git:https://github.com/wso2-extensions/esb-connector-clio.git</connection>
         <url>https://github.com/wso2-extensions/esb-connector-clio.git</url>
-        <developerConnection>
-            scm:git:https://github.com/wso2-extensions/esb-connector-clio
+        <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-clio
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
