@@ -35,26 +35,17 @@ Steps to follow in setting integration test.
         NOTE : CERT_FILE_NAME is the file name which was extracted from Clio, change it accordingly. (e.g. -.clio.com)
                CERT_NAME is name of the certificate. (e.g: clio)
 
- 3. Deploy relevant patches, if applicable and the ESB should be configured as below.
-     Please make sure that the below mentioned Axis configurations are enabled (\repository\conf\axis2\axis2.xml).
+ 3. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "<ESB_CONNECTORS_HOME>/repository/".
 
-        <messageFormatter contentType="application/json" class="org.apache.synapse.commons.json.JsonStreamFormatter"/>
-        <messageBuilder contentType="application/json" class="org.apache.synapse.commons.json.JsonStreamBuilder"/>
-
-        <messageFormatter contentType="text/html" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
-        <messageBuilder contentType="text/html" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
-
-4. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "<ESB_CONNECTORS_HOME>/repository/".
-
- 5. Create a Clio trial account and derive the API Key.
+ 4. Create a Clio trial account and derive the API Key.
     i) 		Using the URL "http://www.goclio.com/sign-up/" create a Clio trial account.
     ii)		Create an application as described in "http://api-docs.clio.com/v2/#create-a-clio-application".
     iii)	Obtain the access token as instructed in "http://api-docs.clio.com/v2/#obtaining-authorization".
 
- 6. Update the Clio properties file at location "{Clio_Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
+ 5. Update the Clio properties file at location "{Clio_Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
 
     i)      apiUrl 							- 	The API URL specific to the created Clio account (https://app.goclio.com).
-    ii)     accessToken			            -   Use the access token obtained under step 5 iii).
+    ii)     accessToken			            -   Use the access token obtained under step 4 iii).
     iii)    lastName						-	Use a valid string as the last name of the contact.
     iv)	    firstName					    -	Use a valid string as the first name of the contact.
     v)      contactType			            - 	Use a valid contact type (e.g:- Person).
@@ -80,5 +71,5 @@ Steps to follow in setting integration test.
     xxv)    updateFirstName					-	Use a valid string as the first name of the contact.This value must be different than the value given for 'firstName'.
     xxvi)	updateLastName					-	Use a valid string as the last name of the contact.This value must be different than the value given for 'lastName'.
 
- 7. Navigate to "<Clio_Connector_Home>" and run the following command.
+ 6. Navigate to "<Clio_Connector_Home>" and run the following command.
           $ mvn clean install
