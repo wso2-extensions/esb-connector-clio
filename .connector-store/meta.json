@@ -4,7 +4,7 @@
     "category": "Other",
     "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/Clio+Connector",
     "description": "The Clio connector allows you to access the Clio REST API through the WSO2 ESB.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "connector"
     ],
